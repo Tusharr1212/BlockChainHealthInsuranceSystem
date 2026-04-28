@@ -2,6 +2,7 @@
 
 A decentralised health insurance platform built on Ethereum. Patients submit claims, doctors certify them, and insurance officers disburse ETH payouts — all transparently recorded on-chain via smart contracts.
 
+
 **Overview**
 
 HealthChain solves a core problem in traditional health insurance: lack of transparency and trust. Every action — claim submission, doctor signature, officer approval, and ETH payout — is recorded immutably on the Ethereum blockchain.
