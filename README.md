@@ -31,13 +31,21 @@ Wallet->MetaMask
 
 
 **How It Works**
+
 The claim lifecycle follows a strict 3-step on-chain flow:
+
 Patient submits claim
-        ↓
+
+↓
+
 Doctor signs & certifies claim
-        ↓
+
+↓
+
 Officer verifies & approves
-        ↓
+
+↓
+
 Smart contract auto-sends ETH to patient wallet
 
 
