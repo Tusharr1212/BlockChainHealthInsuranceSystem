@@ -1,12 +1,12 @@
-HealthChain — Blockchain Health Insurance System
+**HealthChain — Blockchain Health Insurance System**
 
 A decentralised health insurance platform built on Ethereum. Patients submit claims, doctors certify them, and insurance officers disburse ETH payouts — all transparently recorded on-chain via smart contracts.
 
-Overview
+**Overview**
 
 HealthChain solves a core problem in traditional health insurance: lack of transparency and trust. Every action — claim submission, doctor signature, officer approval, and ETH payout — is recorded immutably on the Ethereum blockchain.
 
-Key benefits:
+**Key benefits:**
 
 No central authority can alter or delete a claim record
 
@@ -17,7 +17,7 @@ Every participant's action is cryptographically signed and traceable
 Fraud is deterred because all records are public and permanent
 
 
-Tech Stack:
+**Tech Stack:**
 
 Blockchain->Ethereum (local via Hardhat, testnet via Sepolia)
 
@@ -30,7 +30,7 @@ Blockchain ↔ Frontend->ethers.js v6
 Wallet->MetaMask
 
 
-How It Works
+**How It Works**
 The claim lifecycle follows a strict 3-step on-chain flow:
 Patient submits claim
         ↓
@@ -40,7 +40,9 @@ Officer verifies & approves
         ↓
 Smart contract auto-sends ETH to patient wallet
 
-Roles:
+
+
+**Roles:**
 
 -Owner->Account #0 (deployer)->Registers doctors and patients
 
@@ -51,7 +53,7 @@ Roles:
 -Patient->Registered by owner->Submits claims, receives ETH payouts
 
 
-UI for each role:
+**UI for each role:**
 Owner side:
 <img width="1457" height="865" alt="image" src="https://github.com/user-attachments/assets/63d8b441-7035-41dc-bc69-6fc906728210" />
 Patient side:
