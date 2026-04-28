@@ -74,3 +74,120 @@ After Doctor approval:
 
 Doctor side:
 <img width="1456" height="780" alt="image" src="https://github.com/user-attachments/assets/fbe64e31-5dac-457e-904d-dab107889e61" />
+
+
+
+**Getting Started
+**
+
+**Prerequisites
+**
+
+-Node.js v20 or higher
+
+-0MetaMask browser extension
+
+-VS Code (recommended)
+
+**Installation**
+
+-bash# Clone or create the project folder
+
+-mkdir health-insurance-blockchain
+
+-cd health-insurance-blockchain
+
+**Set up the blockchain workspace
+**
+-mkdir blockchain && cd blockchain
+
+-npm init -y
+
+-npm install --save-dev hardhat@2.22.0
+
+-npm install --save-dev @nomicfoundation/hardhat-toolbox@4.0.0
+
+-npx hardhat init
+
+**Choose: JavaScript project using Mocha and Ethers.js
+**
+**When asked to install dependencies: No
+**
+
+# Set up the React frontend
+
+-cd ..
+
+-npx create-react-app frontend
+
+-cd frontend
+
+-npm install ethers
+
+**Running the Project**
+
+You need three terminals open at the same time.
+
+Terminal 1 — Start the local blockchain
+
+bashcd blockchain
+
+npx hardhat node
+
+This starts a local Ethereum network at http://127.0.0.1:8545 and prints 20 funded test accounts. Keep this running.
+
+Terminal 2 — Deploy the contract
+
+bashcd blockchain
+
+npx hardhat run scripts/deploy.js --network localhost
+
+node scripts/copyABI.js
+
+This deploys the contract, funds it with 2 ETH, saves the contract address to frontend/src/contractConfig.json, and copies the ABI to frontend/src/HealthInsuranceABI.json.
+
+Terminal 3 — Start the frontend
+
+bashcd frontend
+
+npm start
+
+Open http://localhost:3000 in your browser.
+
+Role Guide
+
+Connect MetaMask to Hardhat
+
+Add a custom network in MetaMask:
+
+FieldValueNetwork NameHardhat LocalRPC URLhttp://127.0.0.1:8545Chain ID31337Currency SymbolETH
+
+Import test accounts
+
+From the npx hardhat node output, import any three private keys into MetaMask via Import Account.
+
+
+
+⚠️ These private keys are public Hardhat test keys. Never use them on mainnet or with real funds.
+
+
+**Register roles (do this once after deploy)
+**
+
+Switch MetaMask to Account #0 → refresh the app → you see the Owner panel
+
+Register Account #1 as Doctor (paste its address)
+
+Register Account #2 as Patient (paste its address)
+
+**Full end-to-end flow
+**
+
+1. Submit claimAccount #2 (Patient)Fill in treatment details and submit
+
+2. Sign claimAccount #1 (Doctor)Review and sign the claim
+
+3. Approve & payAccount #0 (Officer)Approve — ETH is sent automatically
+Refresh the page each time you switch MetaMask accounts.
+
+
